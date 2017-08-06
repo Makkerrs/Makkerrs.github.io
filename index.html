@@ -5,6 +5,103 @@
 		<title>First Git</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<style type="text/css">
+			body{
+				background:grey;
+				padding: 0;
+				margin: 0;
+			}
+			
+			a{
+				margin: 0 10px 0 10px;
+			}
+			/*-----------*/
+			.all-content{
+				width: 95%;
+				height: 800px;
+				margin: auto;
+				background: white;
+			}
+			
+			#nav{
+				width: 100%;
+				height: 200px;
+				background: url(img/sea-bg.jpg) no-repeat;
+				background-position:0 -800px;
+			}
+			
+			/*头部title*/
+			.title{
+			
+				font-size: 36px;
+				color: #005059;
+				border-top: 1px solid #005059;
+				border-bottom: 1px solid #005059;
+				margin-top: 40px;
+				padding: 20px 0 20px 0;
+				text-align: center;
+			}
+			
+			.title-2{
+				text-align: center;
+				padding: 20px 0 0 0;
+			}
+			
+			/*自介*/
+			.introduction{-background: cornflowerblue;
+				
+				width: 23%;
+				height: 500px;
+				float: right;
+				position: relative;
+				padding-top: 60px;
+			}
+			
+			.photo{-background: greenyellow;
+				
+				width: 200px;
+				height: 200px;
+				margin: auto;
+				border-radius: 50%;
+				background: url(img/small.jpg) no-repeat;
+				background-position: -35px 0;
+			}
+			
+			.introduce-name{-background: green;
+				
+				color: #B2DBA1;
+				text-align: center;
+				font-size: 24px;
+				font-family: arial;
+				margin-top: 20px;
+			}
+			
+			.introduce-content{-background: cadetblue;
+				
+				margin-top: 10px;
+				text-indent: 2em;
+			}
+			/*左侧效果*/
+			
+			.l-impression{-background: gold;
+					float: left;
+					width: 800px;
+			}
+			
+			.l-impression-1{-background: greenyellow;
+			
+				width: 400px;
+				padding: 80px 0 10px 20px;
+				margin-left: 10px;
+				border-bottom: 3px solid #005059;
+				font-family: "微软雅黑";
+				color: gray;
+				font-size: 18px;
+			}
+			
+			.l-impression-2{
+				margin: 5px 10px 0 0;
+			}
+			
 			.p-obj-1{
 				width: 150px;
 				height: 50px;
@@ -14,8 +111,75 @@
 		</style>
 	</head>
 	<body>
+		<div class="all-content">
+			<!--头部collecet-->
+			<div id="nav" class="container">
+				<div class="title">
+				  Makkerrs  Collection
+				</div>
+				
+				<div class="title-2">
+					"When you think it's too late, it's just the right time"
+				</div>
+			</div>
+			
+			<!--右侧自我-->
+			<div class="introduction">
+				<div class="photo"></div>
+				
+				<div class="introduce-name">
+					Makkerrs
+				</div>
+				
+				<div class="introduce-content">
+					Hi! I’m makkerrs, welcome to visit my blog site. I hope you’ll enjoy it.
+				</div>
+			</div>
+			
+			<!--左侧项目-->
+			<div class="all">
+				<!--小效果-->
+				<div class="l-impression">
+					
+					<div class="l-impression-1">
+						小效果
+					</div>
+					
+					<div class="l-impression-2">
+						<a href="https://Makkerrs.github.io/MouseInMouseOut.html/"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="鼠标移入移出"/></a>
+						<a href="https://Makkerrs.github.io/clock.html"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="倒计时"/></a>
+						<a href="https://Makkerrs.github.io/KeybordControl.html"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="键盘控制"/></a>
+						<a href="https://Makkerrs.github.io/view.html"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="星级评分"/></a>
+					</div>
+					
+				</div>
+				<!--微型项目-->
+				<div class="l-impression">
+					
+					<div class="l-impression-1">
+						微型项目
+					</div>
+					
+					<div class="l-impression-2">
+						<a href="https://Makkerrs.github.io/newmob/"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="newmob"/></a>
+						<a href="https://Makkerrs.github.io/weibo2.html"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="微博效果"/></a>
+					</div>
+				</div>
+				<!--个人项目-->
+				<div class="l-impression">
+					
+					<div class="l-impression-1">
+						个人项目
+					</div>
+					
+					<div class="l-impression-2">
+						<a href="https://Makkerrs.github.io/StarBuck/"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="手机浏览星巴克"/></a>
+						<a href="https://Makkerrs.github.io/YiWoFeng/"><input class="btn btn-success p-obj-1" type="button" name="" id="p-obj-1" value="衣窝疯"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
 		
-		<a href="https://www.baidu.com"><input class="btn btn-info p-obj-1" type="button" name="" id="p-obj-1" value="Private Project"/></a>
 	</body>
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
