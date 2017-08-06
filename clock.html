@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>倒计时时钟</title>
+		<style>
+			#box {
+				width: 300px;
+				text-align: center;
+				margin: 0 auto;
+				padding: 100px 0;
+			}
+			
+			#minute{background: white;color: black;
+				
+				width: 80px;
+				line-height: 2;
+				padding: 0 10px;
+			}
+			
+			#second{background: white;color: black;
+				
+				width: 80px;
+				line-height: 2;
+				padding: 0 10px;
+			}
+			
+			input {
+				border: 0;
+				width: 283px;
+				height: 50px;
+				cursor: pointer;
+				margin-top: 20px;
+				background: url(img/btn-1.png) no-repeat;
+			}
+			
+			input.cancel {
+				background-position: 0 -50px;/*同等于添加transform一样*/
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<span id="minute">0</span>分钟<span id="second">3</span>秒
+			<input type="button" value="" />
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+				var obox = document.getElementById("box");
+				var aInput = obox.getElementsByTagName("input")[0];
+				
+				var timer = null;
+
+				aInput.onclick = function() {		
+					this.className == "" ? (timer = setInterval(updateTime, 1000), updateTime()) : (clearInterval(timer));
+					this.className = this.className == '' ? "cancel" : '';//按钮是否存在class？如果不存在class名  则添加cancel，如果有class名，那就删除
+				};
+
+
+				function updateTime() {
+					var aSpan = obox.getElementsByTagName("span");
+					
+					var second = aSpan[0].innerHTML.replace(/^0/, '') * 60;//计算秒的数字，replace（转化为数字，匹配到的所有内容）
+					var min = parseInt(aSpan[1].innerHTML.replace(/^0/, ''));//同上
+					
+					console.log(second);
+					console.log(min);
+					
+					var Remian = second + min;
+					
+					console.log(Remian)
+					
+					if(Remian <= 0) {
+						clearInterval(timer);
+						alert('起床啦！')
+						return
+					}
+					Remian--;
+				
+					//固定90分钟
+					aSpan[0].innerHTML = format(parseInt(Remian / 60));
+					Remian %= 60;  // %=？
+					aSpan[1].innerHTML = format(parseInt(Remian));
+				}
+				
+				function format(a) {           //          0进1
+					return a.toString().replace(/^(\d)$/, '0$1')//正则表达，用于取余
+				}
+	</script>
+</html>
