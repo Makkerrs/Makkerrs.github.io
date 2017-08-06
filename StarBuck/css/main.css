@@ -1,0 +1,703 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+
+
+/*载入*/
+#loading_img{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	overflow: hidden;
+	transition: 1s;
+	z-index: 99;
+	opacity: 1;
+}
+
+#loading_img img{
+	width: 100%;
+	height: 680px;
+}
+/**/
+
+
+/*播放的框框*/
+
+#s1_section_1{
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+/**/
+
+/*第一数列的所有内容*/
+#vertical_scroll{
+	position: absolute;
+	width: 100%;
+	/*padding: 0 0 300px 0;*/
+}
+/**/
+
+/*头部nav*/
+#nav{
+	width: 100%;
+	height: 100px;
+}
+
+.nav_menu{
+	width: 100%;
+	height: 100px;
+	/*transform: translateY(-50px);*/
+}
+
+.nav_menu img{width: 100%;}
+
+.nav_title{
+	position: absolute;
+	left: 450px;
+	top: 30px;
+	/*transform: translateY(-30px);*/
+}
+
+#autoplay_buttom{
+	width: 100px;
+	height: 20px;
+	position: fixed;
+	right: 15%;
+	top: 20px;
+	overflow: hidden;
+	-background: green;
+	z-index: 98;
+	cursor: pointer;
+}
+
+#autoplay_buttom img{
+	
+}
+
+#sound_buttom{
+	width: 100px;
+	height: 20px;
+	position: fixed;
+	right: 4%;
+	top: 20px;
+	z-index:98;
+	overflow: hidden;
+	cursor: pointer;
+}
+/**/
+
+/*中部文本*/
+
+#content{-background: cadetblue;
+	height: 400px;
+}
+
+#content_content{
+	width: 720px;
+	height: 200px;
+	margin: auto;
+	padding:80px  0 0 0;
+	box-sizing: border-box;
+}
+
+#content_scroll{
+	width: 113px;
+	height: 24px;
+	margin: auto;
+	margin-top: 120px;
+	transition: 0.1s;
+}
+
+#content_arrow{
+	width: 18px;
+	height: 18px;
+	margin: auto;
+	transition: 0.1s;
+}
+
+#content_tip{
+	width: 307px;
+	height: 14px;
+	margin: auto;
+	margin-top: 20px;
+	transition: 0.1s;
+}
+/**/
+
+							/*左下角logo*/
+.logo{
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 98;
+}
+
+
+
+							/*滚动条*/				
+#scroll_bar{
+	width: 10px;
+	height: 100vh;
+	position: fixed;
+	background: black;
+    right: 0;
+    z-index: 90;
+}
+
+#scroll_crack{
+	width: 100%;
+	height: 40px;
+	background: white;
+	position: absolute;
+}
+
+/*动画系列*/
+
+#scroll_area_1{
+	width: 100%;
+	/*position: absolute;*/
+	box-sizing: border-box;
+}
+/*偷看*/
+#comic1{
+	width: 100%;
+	height: 720px;
+	overflow: hidden;
+}
+
+#comic1 img:nth-of-type(1){
+	width: 1280px;
+	height: 720px;
+	position: absolute;
+	top: 500px;
+	right: 0;
+}
+
+#comic1 img:nth-of-type(2){
+	width: 1003px;
+	height: 622px;
+	top: 600px;
+	right: 0;
+	position: absolute;
+}
+
+/*被发现*/
+#comic2{
+	width: 100%;
+	height: 720px;
+	overflow: hidden;
+}
+
+#comic2 img:nth-of-type(1){
+	width: 1332px;
+	height: 720px;
+	position: absolute;
+}
+
+#comic2 img:nth-of-type(2){
+	width: 613px;
+	height: 740px;
+	position: absolute;
+	top: 1200px;
+	left: 400px;
+}
+
+#comic2 img:nth-of-type(3){
+	width: 338px;
+	height: 369px;
+	position: absolute;
+	top: 1570px;
+}
+
+/*跳窗*/
+#comic3{
+	width: 100%;
+	height: 720px;
+}
+
+#comic3 img:nth-of-type(1){
+	
+}
+
+#comic3 img:nth-of-type(2){
+	width: 468px;
+	height: 712px;
+	position: absolute;
+	top: 1950px;
+	left: 400px;
+}
+
+#comic3 img:nth-of-type(3){
+	width: 1100px;
+	height: 712px;
+	position: absolute;
+	top: 1950px;
+	left: -350px;
+}
+
+/*落地*/
+#comic4{
+	width: 100%;
+	height: 720px;
+}
+
+#comic4 img:nth-of-type(1){
+	width: 1280px;
+	height: 720px;
+}
+
+#comic4 img:nth-of-type(2){
+	width: 395px;
+	height: 451px;
+	position: absolute;
+	top: 2930px;
+	left: 500px;
+}
+
+/*被狗追*/
+#comic5{
+	width: 100%;
+	height: 720px;
+}
+
+#comic5 img:nth-of-type(2){
+	width: 360px;
+	height: 340px;
+	position: absolute;
+	top: 3380px;
+	left: 925px;
+}
+
+#comic5 img:nth-of-type(3){
+	width: 635px;
+	height: 720px;
+	position: absolute;
+	top: 3380px;
+	left: 0;
+}
+
+#comic6{
+	width: 100%;
+	height: 100wh;
+}
+/*转化模式*/
+#comic6 img{
+	width: 1280px;
+	height: 120vh;
+}
+
+
+/*第二场*/
+
+#scroll_area_2{
+	height: 100vh;
+	background: greenyellow;
+	position: absolute;
+	bottom: 0;
+	display: none;
+}
+/*转化模式*/
+#comic7{
+	width: 1280px;
+	height: 100vh;
+	float: left;
+}
+
+#comic7 img{
+	width: 100%;
+	height: 120vh;
+	transform: translateY(-90px);
+}
+
+/*爬墙*/
+#comic8{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	transform:translate3d(100%,0,0);
+	z-index: 7;
+}
+
+#comic8 img:nth-of-type(1){
+	width: 100vw;
+	height: 100vh;
+}
+
+#comic8 img:nth-of-type(2){
+	width: 80vw;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#comic9{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	transform:translate3d(0,0,0);
+	z-index: -1;
+}
+
+/*模式转化*/
+#comic10{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	transform:translate3d(100%,0,0);
+	z-index: 1;
+}
+
+#comic10 img{
+	width: 100%;
+	height: 120vh;
+	transform: translate3d(-10px,-90px,0);
+}
+/*接上面10跳转--------------------------------该盒子未定位*/
+#comic11{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+}
+
+#comic11 img{
+	width: 100%;
+	height: 120vh;
+	transform: translateY(-90px);
+}
+
+/*信仰之跃*/
+#comic12{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+}
+#comic12 img{
+	width: 100%;
+	height: 160vh;
+}
+
+/*顺风车*/
+#comic13{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic13 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+}
+#comic13 img:nth-of-type(2){
+	width: 170%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/*遇到追兵*/
+#comic14{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic14 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/*准备跳车*/
+#comic15{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic15 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+/*模式转化*/
+#comic16{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic16 img:nth-of-type(1){
+	width: 100%;
+	height: 120vh;
+	position: absolute;
+	bottom: -5%;
+	left: 0;
+}
+
+/*接上面模式转化*/
+#comic17{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic17 img:nth-of-type(1){
+	width: 100%;
+	height: 120vh;
+	position: absolute;
+	bottom: -5%;
+	left: 0;
+}
+/*跳车逃脱*/
+#comic18{
+	width:1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic18 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#comic18 img:nth-of-type(2){
+	width: 35%;
+	height: 100vh;
+	position: absolute;
+	bottom: 25%;
+	right: 35%;
+}
+
+/*跳车逃脱*/
+#comic19{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic19 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#comic19 img:nth-of-type(2){
+	width: 35%;
+	height: 100vh;
+	position: absolute;
+	bottom: 10%;
+	right: 20%;
+}
+
+/*天桥隐藏*/
+#comic20{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic20 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#comic20 img:nth-of-type(2){
+	width: 90%;
+	height: 60vh;
+	position: absolute;
+	bottom: 10%;
+	right: 0;
+}
+#comic20 img:nth-of-type(3){
+	width: 35%;
+	height: 80vh;
+	position: absolute;
+	bottom: 0;
+	right: 30%;
+}
+
+/*回家*/
+#comic21{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+#comic21 img:nth-of-type(1){
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#comic21 img:nth-of-type(2){
+	width: 13%;
+	height: 60vh;
+	position: absolute;
+	bottom: 0%;
+	right: 30%;
+}
+
+/*模式转化*/
+#comic22{
+	width: 1280px;
+	height: 100vh;
+	position: absolute;
+	z-index: -4;
+	overflow: hidden;
+}
+
+/*接上面转化*/
+#scroll_area_3{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: -2%;
+	display: none;
+}
+
+#comic23{
+	width: 100%;
+	height: 728px;
+	position: absolute;
+	overflow: hidden;
+}
+
+/*电梯报告*/
+#comic24{
+	width: 120%;
+	height: 728px;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+}
+
+#comic24 img:nth-of-type(1){
+	width: 1280px;
+	height: 100%;
+	position: absolute;
+	bottom: 100%;
+}
+
+#comic24 img:nth-of-type(2){
+	width: 311px;
+	height: 620px;
+	position: absolute;
+	left: 30%;
+	bottom: 100%;
+}
+
+
+/*上传报告*/
+
+#comic25{
+	width: 120%;
+	height: 728px;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+}
+
+#comic25 img{
+	width: 1280px;
+	height: 100%;
+	position: absolute;
+	bottom: 210%;
+}
+
+/*收工*/
+#comic26{
+	width: 120%;
+	height: 728px;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+}
+
+#comic26 img{
+	width: 1280px;
+	height: 100%;
+	position: absolute;
+	bottom: 320%;
+}
+
+/*最后的logo*/
+
+#comic27{
+	width: 120%;
+	height: 728px;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+}
+
+#comic27 img:nth-of-type(1){
+	width: 1280px;
+	height: 100%;
+	position: absolute;
+	bottom: 450%;
+}
+
+#comic27 img:nth-of-type(2){
+	width: 158px;
+	height: 50px;
+	position: absolute;
+	bottom: 480%;
+	left: 5%;
+}
+
+#comic27 img:nth-of-type(3){
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	bottom: 490%;
+	left: 10%;
+}
+
+#comic27 img:nth-of-type(4){
+	width: 206px;
+	height: 60px;
+	position: absolute;
+	bottom: 480%;
+	right: 20%;
+	cursor: pointer;
+}
+
+#comic27 img:nth-of-type(5){
+	width: 233px;
+	height: 19px;
+	position: absolute;
+	bottom: 540%;
+	right: 20%;
+	cursor: pointer;
+}

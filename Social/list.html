@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>招贤纳士-社会招聘</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="js/data.js"></script>
+		<script>
+			window.onload = function() {
+				var oUl = document.querySelector('#oUl');
+				var right = document.querySelector('.right');
+				var img = right.querySelector('.title img');
+				var apply = document.querySelector('.info');
+				var pre = document.querySelector(".prev");
+				var nex = document.querySelector(".next");
+				var tag = right.querySelector(".pages p");
+				
+
+				console.log(tag)
+				var list = aData.list; /*date函数下的对象list*/
+				for(var i = 0; i < list.length; i++) { /*拿到list的长度*/
+					oUl.innerHTML += '<li><a href="list.html?search=' + list[i].lx + '">' + list[i].text + '</a></li>'; /*给oUL文本下赋予list对象下属性lx的内容，*/
+				};
+				var lis = oUl.children; /*为刚才创建好的ul下的li添加样式*/
+				for(var i = 0; i < lis.length; i++) {
+					lis[i].className = '';
+				}
+				var search = window.location.search.split('=')[1]; /*截取search字符串=后面的值*/
+				var json = null; /*先做一个空的变量存放后面的值*/
+				if(search) { /*如果存在这个值*/
+					json = aData[search]; /*那么将这个值获取并且赋予给json*/
+					if(search == 'sh') { /*如果变量search等于sh*/
+						lis[0].className = 'focus'; /*那么赋予ul下的第一个li一个class为focus的样式*/
+					} else {
+						lis[1].className = 'focus'; /*同上*/
+					}
+				} else {
+					oUl.children[0].className = 'focus'; /*没有这个值的话第一个ul下的li默认添加class的样式*/
+					json = aData.sh;
+				}
+				img.src = json.img;
+				console.log(json.text.length);
+
+				for(var i = 0; i < 3; i++) { /*将所有有变化的量按照对象aDate里面对应的属性写上面*/
+					apply.innerHTML += '<p class = "zp">' + /*为文本正体添加内容*/
+						'<span><a href = "">★职位需求： ' + json.text[i].zw + '</a></span>' +
+						'<span>需求人数： ' + json.text[i].rs + '名</span>' +
+						'<span class = "date">' + json.text[i].sj[0] + '年' + json.text[i].sj[1] + '月' + json.text[i].sj[2] + '日' + '</span></p><p class = "yq">' + json.text[i].info[0].l.join('').substring(0, 130) + '...[<a href = "">查看详情 </a>]</p>'
+				}
+
+				for(var i = 0; i < Math.ceil(json.text.length / 3); i++) { /*动态的根据json的长度计算并变化页面选择123或者12，mathceil向上取余jsontext除3的值*/
+					tag.innerHTML += '<span>' + '<a href="javascript:;">' + (i + 1) + '</a>' + '</span>';
+				}
+
+				var sps = tag.querySelectorAll('a'); /*获取tag里面的a并用变量存储*/
+				var sel = tag.querySelectorAll('span');/*获取tag下2个左右选择span*/
+
+				for(var i = 0; i < sps.length; i++) {
+					sps[i].onclick = function() { /*根据点击的sp动态改变hash*/
+						window.location.hash = 'page=' + this.innerHTML;
+					}
+				}
+
+				window.onhashchange = function() {
+					/*利用hash不断的改变的值去改变内容*/
+					var num = window.location.hash.split('=')[1];
+					for (var i = 0 ; i<sel.length;i++) {
+						sel[i].className = ''/*hash刷新时让3个选择按钮清空*/
+					}
+					set(num);
+					sel[num-1].className='focus';/*-1是因为提取的hash是123为了对应数组必须-1*/
+				}
+				
+				var leng = Math.ceil(json.text.length / 3);/*长度取值必须放这里才取得到，json过后才有赋值*/
+				
+				nex.onclick = function(){
+					var num = window.location.hash.split('=')[1];
+					if(num<leng){/*根据上面的取值动态判断*/
+						num = parseInt(num)+1;/*因为提取的split是字符串所以需要转化*/
+						window.location.hash = 'page='+num;
+					}
+					
+				}
+				
+				
+				pre.onclick = function(){
+					var num = window.location.hash.split('=')[1];
+					if(num>1){
+						num = parseInt(num)-1;
+						window.location.hash = 'page='+num;
+						
+					}
+					
+				}
+				
+				
+
+				function set(num) {
+					apply.innerHTML = '';
+					for(var i = (num * 3 - 3);i<num*3;i++) {
+						if(json.text[i]) {
+							apply.innerHTML += '<p class="zp">' +
+								'<span><a href="">★ 职位需求：' + json.text[i].zw + '</a></span>' +
+								'<span>需求人数：' + json.text[i].rs + '名</span>' +
+								'<span class="date">' + json.text[i].sj[0] + '年' + json.text[i].sj[1] + '月' + json.text[i].sj[2] + '日</span>' +
+								'</p>' +
+								'<p class="yq">' + json.text[i].info[0].l.join('').substring(0, 98) + '...[<a href="">查看详情</a>]'+
+								'</p>';                                          /*截取对象中对应属性的98个字符，会包括空格标题等等任何*/
+						}
+
+					}
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div class="left">
+				<h2>招贤纳士</h2>
+				<ul id="oUl">
+					<!--<li class="focus"><a href="javascript:;">社会招聘</a></li>
+      	<li><a href="javascript:;">校园招聘</a></li> -->
+				</ul>
+			</div>
+			<div class="right">
+				<div class="title">
+					<img src="img/shzp.gif" />
+				</div>
+				<div class="info">
+
+					<p class="zp">
+						<!--<span><a href="">★ 职位需求：测试工程师【社会招聘】</a></span>
+          <span>需求人数：2名</span>
+         	<span class="date">2016年7月30日</span>
+        </p>
+      	<p class="yq">1.计算机或相关专业本科以上学历；2.从事软件测试工作3年及以上；3.具备良好的沟通能力和快速学习能力；4.精通测试策略和方法、测试用例设计；5.熟悉DB2、AIX等平台的基本操作；6.具备2年以上金...[<a href="">查看详情</a>]
+        </p>
+
+      	<p class="zp">
+        	<span><a href="">★ 职位需求：测试工程师【社会招聘】</a></span>
+          <span>需求人数：12名</span>
+         	<span class="date">2016年7月30日</span>
+        </p>
+      	<p class="yq">1.计算机或相关专业本科以上学历；2.从事软件测试工作3年及以上；3.具备良好的沟通能力和快速学习能力；4.精通测试策略和方法、测试用例设计；5.熟悉DB2、AIX等平台的基本操作；6.具备2年以上金...[<a href="">查看详情</a>]
+        </p>
+
+      	<p class="zp">
+        	<span><a href="">★ 职位需求：测试工程师【社会招聘】</a></span>
+          <span>需求人数：21名</span>
+         	<span class="date">2016年7月30日</span>
+        </p>
+      	<p class="yq">1.计算机或相关专业本科以上学历；2.从事软件测试工作3年及以上；3.具备良好的沟通能力和快速学习能力；4.精通测试策略和方法、测试用例设计；5.熟悉DB2、AIX等平台的基本操作；6.具备2年以上金...[<a href="">查看详情</a>]-->
+					</p>
+
+				</div>
+				<div class="pages">
+					<span class="prev">
+         			<a href="javascript:;">
+          			<img src="img/pre.gif">
+          			</a>
+        		</span>
+					<span class="next">
+          			<a href="javascript:;">
+            		<img src="img/next.gif">
+          			</a>
+        		</span>
+					<p>
+						<!--<span class="focus">
+            			<a href="javascript:;">1</a>
+          </span>
+          <span>
+            <a href="javascript:;">2</a>
+          </span>
+          <span>
+            <a href="javascript:;">3</a>
+          </span>-->
+					</p>
+
+				</div>
+
+			</div>
+			<div class="clear"></div>
+		</div>
+	</body>
+
+</html>
