@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index2.css"/>
+	</head>
+	<style type="text/css">
+		ul,li{list-style: none;margin:0;padding: 0;}
+	</style>
+	<body>
+		<div id="app" class="container">
+			<div id="" class="title">
+				商品购入
+			</div>
+			
+			<ul class="title2">
+				<li class="title2-1 col-xs-4">商品信息</li>
+				<li class="title2-1 col-xs-2">商品金额</li>
+				<li class="title2-1 col-xs-2">商品数量</li>
+				<li class="title2-1 col-xs-2">总金额</li>
+				<li class="title2-1 col-xs-2">编辑</li>
+			</ul>
+			
+			<div id="content">
+				<ul id='content-all'>
+					<li class="content-part col-xs-4 content-part-1">
+						<!--商品选中-->
+						<div id="content-part-checkpoint"></div>
+						<div id="imgs">
+							<img src="{{item.productImage}}"/>
+						</div>
+					</li>
+					<li class="content-part col-xs-2 content-part-1">2</li>
+					<li class="content-part col-xs-2 content-part-1">3</li>
+					<li class="content-part col-xs-2 content-part-1">4</li>
+					<li class="content-part col-xs-2 content-part-1">5</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="js/lib/vue.min.js"></script>
+    <script src="js/lib/vue-resource.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+</html>

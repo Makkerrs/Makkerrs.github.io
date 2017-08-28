@@ -1,0 +1,44 @@
+#app{
+	width: 95%;
+	
+	border: 1px solid;
+}
+
+/*商品购入*/
+.title{
+	text-align: center;
+	margin-top: 40px;
+}
+
+/*商品信息*/
+.title2-1{background: pink;
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+}
+
+/*黄鹤楼*/
+#content-all{
+	width: 100%;
+}
+
+.content-part{
+	text-align: center;
+}
+
+.content-part-1{
+	padding: 10px;
+}
+
+/*商品选中按钮*/
+#content-part-checkpoint{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 1px solid gray;
+	border-radius: 50%;
+	cursor: pointer;
+    vertical-align: middle;
+}
